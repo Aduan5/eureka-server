@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 8761
+
+eureka:
+  client:
+    #是否将自己这个服务注册到EurekaServer中  默认True 此服务为Server  所以为False
+    registerWithEureka: false
+    #是否从EurekaServer获取注册信息 默认True 单点ES不存在其他的EurekaServer 所以为False
+#    fetchRegistry: false
+    serviceUrl:
+      #与ES交互的地址 查询注册都依赖此地址 默认为http://localhost:8761/eureka 多个地址使用","分割
+      defaultZone: http://localhost:8761/eureka
