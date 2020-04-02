@@ -6,7 +6,7 @@ VOLUME /tmp
 
 # 这个地方jar包名称改成自己的jar名称
 ADD target/eureka-server.jar app.jar
-RUN bash -c 'touch /app.jar'
+#RUN bash -c 'touch /app.jar'
 
 # 开放8761端口
 EXPOSE 8761
