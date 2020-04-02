@@ -1,7 +1,6 @@
-package com.aduan.eureka.eurekaserver;
+package com.aduan.eureka.eureka;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 //@SpringBootTest
 class EurekaServerApplicationTests {

@@ -6,10 +6,10 @@ server:
 
 eureka:
   client:
-    #ÊÇ·ñ½«×Ô¼ºÕâ¸ö·şÎñ×¢²áµ½EurekaServerÖĞ  Ä¬ÈÏTrue ´Ë·şÎñÎªServer  ËùÒÔÎªFalse
+    #æ˜¯å¦å°†è‡ªå·±è¿™ä¸ªæœåŠ¡æ³¨å†Œåˆ°EurekaServerä¸­  é»˜è®¤True æ­¤æœåŠ¡ä¸ºServer  æ‰€ä»¥ä¸ºFalse
     registerWithEureka: false
-    #ÊÇ·ñ´ÓEurekaServer»ñÈ¡×¢²áĞÅÏ¢ Ä¬ÈÏTrue µ¥µãES²»´æÔÚÆäËûµÄEurekaServer ËùÒÔÎªFalse
-#    fetchRegistry: false
+    #æ˜¯å¦ä»EurekaServerè·å–æ³¨å†Œä¿¡æ¯ é»˜è®¤True å•ç‚¹ESä¸å­˜åœ¨å…¶ä»–çš„EurekaServer æ‰€ä»¥ä¸ºFalse
+    #    fetchRegistry: false
     serviceUrl:
-      #ÓëES½»»¥µÄµØÖ· ²éÑ¯×¢²á¶¼ÒÀÀµ´ËµØÖ· Ä¬ÈÏÎªhttp://localhost:8761/eureka ¶à¸öµØÖ·Ê¹ÓÃ","·Ö¸î
+      #ä¸ESäº¤äº’çš„åœ°å€ æŸ¥è¯¢æ³¨å†Œéƒ½ä¾èµ–æ­¤åœ°å€ é»˜è®¤ä¸ºhttp://localhost:8761/eureka å¤šä¸ªåœ°å€ä½¿ç”¨","åˆ†å‰²
       defaultZone: http://localhost:8761/eureka

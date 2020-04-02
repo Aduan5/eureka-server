@@ -15,8 +15,15 @@
     <description>Spring Cloud Eureka Server</description>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+        <docker.image.prefix>springcloud</docker.image.prefix>
+
+        <!-- 阿里云镜像仓库地址 -->
+        <docker.repository>registry.cn-hangzhou.aliyuncs.com</docker.repository>
+        <docker.registry.name>eureka-server</docker.registry.name>
     </properties>
 
     <dependencies>
@@ -56,6 +63,27 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.2.0</version>
+                <configuration>
+                    <!-- 镜像地址 -->
+                    <imageName>${docker.repository}/${docker.registry.name}/${project.artifactId}:${project.version}</imageName>
+                    <!-- docker的DockerFile配置文件路径 -->
+                    <dockerDirectory>${project.basedir}/</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                    <serverId>docker-aliyun</serverId>
+                    <registryUrl>${docker.repository}</registryUrl>
+                    <pushImage>true</pushImage>
+                </configuration>
             </plugin>
         </plugins>
     </build>
