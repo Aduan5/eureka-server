@@ -5,6 +5,9 @@ server:
   port: 8761
 
 eureka:
+  server:
+    # 关闭自我保护
+    enable-self-preservation: false
   client:
     #是否将自己这个服务注册到EurekaServer中  默认True 此服务为Server  所以为False
     registerWithEureka: false
